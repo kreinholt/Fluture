@@ -1,26 +1,11 @@
-import {noop} from './utils';
 import {cons, cat, nil} from './list';
+import mediator from './mediator';
 
 /* istanbul ignore next: non v8 compatibility */
-var captureStackTrace = Error.captureStackTrace || captureStackTraceFallback;
-var _debug = noop;
-
-export {captureStackTrace};
-
-export function debugMode(debug){
-  _debug = debug ? debugHandleAll : noop;
-}
-
-export function debugHandleAll(fn){
-  return fn();
-}
-
-export function debug(fn){
-  return _debug(fn);
-}
+export var captureStackTrace = Error.captureStackTrace || captureStackTraceFallback;
 
 export function captureContext(previous, tag, fn){
-  return debug(function debugCaptureContext(){
+  return mediator.debug(function debugCaptureContext(){
     var context = {
       tag: tag,
       name: ' from ' + tag + ':',

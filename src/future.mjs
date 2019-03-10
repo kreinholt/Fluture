@@ -5,7 +5,7 @@ import {isFunction} from './internal/predicates';
 import {FL, $$type} from './internal/const';
 import {nil, cons, cat, isNil, reverse} from './internal/list';
 import type from 'sanctuary-type-identifiers';
-import {error, typeError, invalidFuture, makeError} from './internal/error';
+// import {error, typeError, invalidFuture, makeError} from './internal/error';
 import {throwInvalidArgument, throwInvalidContext, throwInvalidFuture} from './internal/throw';
 import {captureContext} from './internal/debug';
 
